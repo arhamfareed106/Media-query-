@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.training-section h1 {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.container {
+    width: 1170px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.training-item {
+    flex-basis: 23%;
+    margin: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.training-item h3 {
+    padding: 10px 0;
+    transition: color 0.4s ease-in-out;
+}
+
+.training-item p {
+    font-size: 14px;
+    padding: 0 10px;
+    transition: color 0.4s ease-in-out;
+}
+
+.training-item button {
+    background-color: blue;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.training-item:hover {
+    transform: translateY(-10px);
+    background-color: blueviolet;
+}
+
+.training-item:hover h3, .training-item:hover p {
+    color: aliceblue;
+}
+
+.training-item:hover button {
+    background: white;
+    color: blue;
+}
+
+.training-item:hover::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.training-item:hover::before {
+    top: 0;
+    left: 0;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .training-item {
+        margin: 10px;
+    }
+}
